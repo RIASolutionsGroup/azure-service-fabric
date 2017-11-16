@@ -1,0 +1,55 @@
+﻿@{
+    ViewData["Title"] = "Voting Marvel Characters";
+}
+<div ng-controller="VotingAppController" ng-init="load()">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-8 col-xs-offset-2 text-center">
+                <h2>Voting Marvel Characters</h2>
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+
+
+            <div class="row">
+                <div class="col-sm-4" ng-repeat="character in characters.data">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <strong>{{character.value.name}}</strong><br />
+                        </div>
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table table-condensed shortMargin">
+                                    <tr>
+                                        <td rowspan="4" width="125px;">
+                                            <img ng-src="/Images/Characters/{{character.value.path}}">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Real Name:</b></td>
+                                        <td><i>{{character.value.realName}}</i></td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Origin:</b></td>
+                                        <td><i>{{character.value.origin}}</i></td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Votes:</b></td>
+                                        <td><i>{{character.value.votes}}</i></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="panel-footer clearfix">
+                            <div class="pull-right">
+                                <buton class="btn btn-primary btn-xs" ng-click="vote(character.key);">Vote</buton>
+                                <buton class="btn btn-danger btn-xs" ng-click="remove(character.key);">Delete</buton>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

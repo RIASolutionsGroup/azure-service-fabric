@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html ng-app="VotingApp">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/lib/toastr/toastr.css" rel="stylesheet" />
+    <link href="~/css/site.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-header">
+            <img src="~/images/logoRIA.png" height="40px" />
+        </div>
+        <div class="collapse navbar-collapse">
+            <div class="nav navbar-nav">
+                <a class="navbar-brand active" href="http://riasolutionsgroup.com/">Ria Demo</a>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="~/lib/angular/angular.js"></script>
+    <script src="~/lib/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="~/lib/toastr/toastr.js"></script>
+    <script src="~/js/site.js"></script>
+    <script src="~/js/notificationService.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
